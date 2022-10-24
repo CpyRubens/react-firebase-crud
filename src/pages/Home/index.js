@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const Home = () => {
   const [data, setData] = useState({});
   useEffect(() => {
-    firebaseDb.child("contacts").on("value", (snapshot) => {
+    firebaseDb.child("Pacientes").on("value", (snapshot) => {
       if (snapshot.val() !== null) {
         setData({
           ...snapshot.val(),
@@ -24,7 +24,7 @@ const Home = () => {
 
   const onDelete = (id) => {
     if (window.confirm("Are you sure wanted to delete this record ?")) {
-      firebaseDb.child(`contacts/${id}`).remove((err) => {
+      firebaseDb.child(`Pacientes/${id}`).remove((err) => {
         if (err) {
           console.log(err);
         } else {
@@ -50,7 +50,7 @@ const Home = () => {
             return (
               <tr key={id}>
                 <th scope="row">{id}</th>
-                <td>{data[id].name}</td>
+                <td>{data[id].valor} °C</td>
                 <td>{data[id].email}</td>
                 <td>{data[id].contact}</td>
                 <td>

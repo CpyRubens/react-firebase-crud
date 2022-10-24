@@ -10,7 +10,7 @@ const View = () => {
   const { id } = currentId;
   const history = useHistory();
   useEffect(() => {
-    firebaseDb.child("contacts").on("value", (snapshot) => {
+    firebaseDb.child("Pacientes").on("value", (snapshot) => {
       if (snapshot.val() !== null) {
         setData({
           ...snapshot.val(),

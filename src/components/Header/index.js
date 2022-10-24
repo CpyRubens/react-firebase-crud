@@ -16,7 +16,7 @@ const Header = () => {
   }, [location]);
   return (
     <div className="header">
-      <p className="logo">NERD AUTODIDATA</p>
+      <p className="logo">HEALTH DESK</p>
       <div className="header-right">
         <Link to="/">
           <p
